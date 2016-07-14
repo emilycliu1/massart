@@ -2,44 +2,32 @@
 $(document).ready(function()
 {
 
-
-
-	// hover over words to cause words to blink
-	$("#twinkle_B").mouseenter(function()
+	// click text to cause words to blink
+	$(".text").click(function()
 		{
-			$(this).fadeTo(400, 0.1).fadeTo(400, 1.0);
-		}).mouseleave(function()
-		{
-			$(this).fadeTo(400, 1.0);
+			$(this).fadeTo(300, 0.3).fadeTo(300, 1.0);
 		});
 
-	$("#how_B").mouseenter(function()
-		{
-			$(this).fadeTo(400, 0.1).fadeTo(400, 1.0);
-		}).mouseleave(function()
-		{
-			$(this).fadeTo(400, 1.0);
-		});
-
-
-
+	
+	// hover over text to change size
+	$(".text").mouseenter(function()
+	{
+		$(this).animate(
+			{fontSize: '30px'}, 400);
+	}). mouseleave(function()
+	{
+		$(this).animate(
+			{fontSize: '28px'}, 400);
+	});
 
 	// click twinkle_B to fade in last line
 	$("#twinkle_B").click(function()
 	{
 		$("#how_B").fadeIn()
-			{
-				$("#how_B").text("How I wonder what you are");
-			};
+		{ 
+			$("#how_B").text("How I wonder what you are");
+		};
 	});
-
-
-
-
-
-
-
-
 
 
 });

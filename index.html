@@ -5,7 +5,6 @@
 <head>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
-
 	<script src = "index.js"> </script>
 
 </head>
@@ -14,7 +13,7 @@
 
 <div id = container_1>
 	<div id = picture_1>
-		<div id = twinkle_A>
+		<div id = twinkle_A class = text>
 		Twinkle, twinkle, little star 
 		</div>
 	</div>	
@@ -22,7 +21,7 @@
 
 <div id = container_2>
 	<div id = picture_2>
-		<div id = how_A> 
+		<div id = how_A class = text> 
 		How I wonder what you are 
 		</div>
 	</div>
@@ -30,7 +29,7 @@
 
 <div id = container_3>
 	<div id = picture_3>
-		<div id = up> 
+		<div id = up class = text> 
 		Up above the world so high 
 		</div>
 	</div>	
@@ -39,7 +38,7 @@
 
 <div id = container_4>
 	<div id = picture_4>
-		<div id = like> 
+		<div id = like class = text> 
 		Like a diamond in the sky 
 		</div>
 	</div>
@@ -49,16 +48,14 @@
 	<div id = picture_5>
 	</div>
 
-	<div id = twinkle_B> 
+	<div id = twinkle_B class = text> 
 	Twinkle twinkle little star 
 	</div>
 
-	<div id = how_B>
+	<div id = how_B class = text>
 	</div>
 
 </div>
-
-
 
 </body>
 
@@ -67,11 +64,15 @@
 
 	body
 	{
+	margin: 0px;
+	}
+
+	.text
+	{
 	color: white; 
 	font-size: 28px;
 	text-shadow: 0px 0px 20px white;
-	font-family: Baskerville, serif;
-	margin: 0px;
+	font-family: Baskerville, sans-serif;
 	}
 
 	#container_1
@@ -87,7 +88,9 @@
 
 		#twinkle_A 
 		{
-		padding: 500px 0px 0px 700px;
+		padding: 2px;
+		margin: 450px 0px 0px 700px;
+		position: absolute;
 		}
 
 	#container_2
@@ -103,7 +106,9 @@
 
 		#how_A 
 		{
-		padding: 400px 0px 0px 200px;
+		padding: 2px;
+		margin: 400px 0px 0px 200px;
+		position: absolute;
 		}
 
 	#container_3
@@ -119,7 +124,9 @@
 
 		#up 
 		{
-		padding: 280px 0px 0px 800px;
+		padding: 2px;
+		margin: 280px 0px 0px 800px;
+		position: absolute;
 		}
 
 	#container_4
@@ -135,12 +142,13 @@
 
 		#like
 		{
-		padding: 210px 0px 0px 570px;
+		padding: 2px;
+		margin: 210px 0px 0px 570px;
+		position: absolute;
 		}
 
 	#container_5
-	{
-	}
+	{  }
 
 		#picture_5
 		{
@@ -154,14 +162,14 @@
 		#twinkle_B 
 		{
 		padding: 2px;
-		margin: 600px 0px 0px 100px;
+		margin: 580px 0px 0px 100px;
 		position: absolute;
 		}
 
 		#how_B
 		{
 			padding: 2px;
-			margin: 640px 0px 0px 100px;
+			margin: 620px 0px 0px 100px;
 			position: absolute;
 		}
 

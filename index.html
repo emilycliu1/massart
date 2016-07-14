@@ -6,16 +6,23 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
 	<script src = "index.js"> </script>
+	<script src = "website_form.js"> </script>
 
 </head>
 
 <body>
 
+
 <div id = container_1>
 	<div id = picture_1>
 		<div id = twinkle_A class = text>
-		Twinkle, twinkle, little star 
+		Twinkle, twinkle, little star
 		</div>
+
+		<div id = fact_1 class = fact>
+		One of the following three star facts is false. Guess which one it is!
+		</div>
+
 	</div>	
 </div>
 
@@ -24,6 +31,11 @@
 		<div id = how_A class = text> 
 		How I wonder what you are 
 		</div>
+
+		<div id = fact_2 class = fact>
+		All stars are almost entirely made up of Hydrogen and Helium.
+		</div>
+
 	</div>
 </div>
 
@@ -31,6 +43,10 @@
 	<div id = picture_3>
 		<div id = up class = text> 
 		Up above the world so high 
+		</div>
+
+		<div id = fact_3 class = fact>
+		The nearest star to the sun is Proxima Centauri. <br> It is 4.24 light years away.
 		</div>
 	</div>	
 </div>
@@ -40,6 +56,10 @@
 	<div id = picture_4>
 		<div id = like class = text> 
 		Like a diamond in the sky 
+		</div>
+
+		<div id = fact_4 class = fact>
+		Stars don't twinkle; the flickering effect is due to light <br> bending when passing through Earth's atmosphere.
 		</div>
 	</div>
 </div>
@@ -52,10 +72,36 @@
 	Twinkle twinkle little star 
 	</div>
 
-	<div id = how_B class = text>
+	<div id = how_B class = text class = fact>
+	How I wonder what you are
+	</div>
+
+	<div id = "form">
+	<form id = "my-form">
+		<fieldset class = "line">
+			<label id = "question">
+				Which fact is false? 
+			</label>
+			<select id = "fave_fact">
+				<option value = "2"> All stars have almost identical compositions. </option>
+				<option value = "3"> The nearest star to the sun is Proxima Centauri. </option>
+				<option value = "4"> Stars don't actually twinkle. </option>
+			</select>
+		</fieldset>
+
+		<fieldset class = "line">
+			<button id = "form-submit"> Check your answer </button>
+		</fieldset>
+
+	</form>
+	</div>
+
+	<div id = "answer">
+	Surprise! All the facts are true!
 	</div>
 
 </div>
+
 
 </body>
 
@@ -71,8 +117,16 @@
 	{
 	color: white; 
 	font-size: 28px;
-	text-shadow: 0px 0px 20px white;
 	font-family: Baskerville, sans-serif;
+	text-shadow: 0px 0px 20px white;
+	}
+
+	.fact
+	{
+	color: white;
+	font-size: 20px;
+	font-family: Baskerville, sans-serif;
+	text-shadow: 0px 0px 10px;
 	}
 
 	#container_1
@@ -93,6 +147,12 @@
 		position: absolute;
 		}
 
+		#fact_1 
+		{
+		margin: 500px 0px 0px 588px;
+		position: absolute;
+		}
+
 	#container_2
 	{  }
 
@@ -107,7 +167,13 @@
 		#how_A 
 		{
 		padding: 2px;
-		margin: 400px 0px 0px 200px;
+		margin: 387px 0px 0px 200px;
+		position: absolute;
+		}
+
+		#fact_2
+		{
+		margin: 435px 0px 0px 114px;
 		position: absolute;
 		}
 
@@ -125,8 +191,15 @@
 		#up 
 		{
 		padding: 2px;
-		margin: 280px 0px 0px 800px;
+		margin: 250px 0px 0px 780px;
 		position: absolute;
+		}
+
+		#fact_3
+		{
+		margin: 295px 0px 0px 744px;
+		position: absolute;
+		text-align: center;
 		}
 
 	#container_4
@@ -147,6 +220,13 @@
 		position: absolute;
 		}
 
+		#fact_4
+		{
+		margin: 258px 0px 0px 510px;
+		position: absolute;
+		text-align: center;
+		}
+
 	#container_5
 	{  }
 
@@ -162,15 +242,43 @@
 		#twinkle_B 
 		{
 		padding: 2px;
-		margin: 580px 0px 0px 100px;
+		margin: 580px 0px 0px 85px;
 		position: absolute;
 		}
 
 		#how_B
 		{
-			padding: 2px;
-			margin: 620px 0px 0px 100px;
-			position: absolute;
+		padding: 2px;
+		margin: 620px 0px 0px 85px;
+		position: absolute;
+		}
+
+		#form
+		{
+		color: white;
+		font-size: 20px;
+		font-family: Baskerville, sans-serif;
+		text-shadow: 0px 0px 10px;
+		position: absolute;
+		margin: 675px 0px 0px 100px;
+		}
+
+		.line
+		{
+		border: none;
+		background-color: none;
+		padding: 5px;
+		border: 0px;
+		}
+
+		#answer
+		{
+		color: white;
+		font-size: 20px;
+		font-family: Baskerville, sans-serif;
+		text-shadow: 0px 0px 10px;
+		position: absolute;
+		margin: 715px 0px 0px 240px;
 		}
 
 

@@ -111,6 +111,6 @@ $(document).ready(function()
 			answerAppear = 'Correct! "Twinkling" is actually caused by light bending in the atmosphere.'; // diff quotes bc of the quotes in the text
 		}
 
-		$("#answer").text(answerAppear).fadeIn(100).animate({fontSize: "60px"}, 200).animate({fontSize: "37px"}, 400); // this is the function, put it after the if/else because there has to be in input for answerAppear before the animations happen	
+		$("#answer").text(answerAppear).fadeIn(50).animate({fontSize: "60px"}, 200).animate({fontSize: "37px"}, 400); // this is the function, put it after the if/else because there has to be in input for answerAppear before the animations happen	
 	});
 });

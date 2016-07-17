@@ -220,10 +220,9 @@ text-align: center;
 {
 	position: fixed;
 	z-index: 100; /* it's #100 in stacking, basically on top of everything else */
-	bottom: 40px; /* distance from the bottom */
+	bottom: 20px; /* distance from the bottom */
 	right: 100px; /* distance from the right */
-	width: 50px;
-	height: 50px;
+	padding: 15px;
 	border: none;
 	border-radius: 5px; /* rounds out the corners of the border */
 	text-align: center;
@@ -231,16 +230,17 @@ text-align: center;
 	color: white;
 	cursor: pointer; /* so you know you can click on it */
 	transition: opacity 0.3s ease-out; /* takes 0.4 seconds to change opacity */
-	opacity: 0;
+	opacity: 0; /* because typicaly initially, you can't see it bc you're at the top */
+	text-decoration: none; /* gets rid of that weird underline */
 }
 
 
-#back-to-top:hover /* when you hover, the background becomes this color */
+#back-to-top:hover /* when you hover, the div does this */
 {
-    background: rgba(128, 128, 128, 0.4);
+    text-shadow: 0px 0px 15px;
 }
 
-#back-to-top.show /* for when you want to see it */
+#back-to-top.show /* for when you want to see it, after the appropriate scrolling */
 {
     opacity: 1;
 }

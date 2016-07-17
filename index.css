@@ -10,6 +10,7 @@ font-size: 30px;
 font-family: Baskerville, sans-serif;
 text-shadow: 0px 0px 20px white;
 text-align: center;
+cursor: pointer; /* turns the cursor into a pointer so you know you can click */
 }
 
 .fact
@@ -160,7 +161,7 @@ text-align: center;
 	#form /* this is the whole form */
 	{
 	position: absolute;
-	margin: 655px 0px 0px 105px;
+	margin: 660px 0px 0px 105px;
 	}
 
 	.line
@@ -178,13 +179,14 @@ text-align: center;
 	text-shadow: 0px 0px 10px;
 	}
 
-	#guess /* this is the selector*/
+	#guess /* this is the selector list */
 	{
 	background-color: rgba(255, 255, 255, 0.1);
 	color: white;
 	font-family: Baskerville, sans-serif;
 	font-size: 16px;
 	text-shadow: 0px 0px 3px;
+	cursor: pointer; /* turns the cursor into a pointer so you know you can click */
 	}
 
 	#submit /* this is the button */
@@ -198,6 +200,7 @@ text-align: center;
 	margin-left: 10px;
 	text-align: center;
 	border-radius: 18px;
+	cursor: pointer; /* turns the cursor into a pointer so you know you can click */
 	}
 
 	#answer
@@ -209,3 +212,43 @@ text-align: center;
 	position: absolute;
 	margin: 750px 0px 0px 110px;
 	}
+
+
+/* This stuff is for the scroll to top arrow */
+
+#back-to-top 
+{
+	position: fixed;
+	z-index: 100; /* it's #100 in stacking, basically on top of everything else */
+	bottom: 40px; /* distance from the bottom */
+	right: 100px; /* distance from the right */
+	width: 50px;
+	height: 50px;
+	border: none;
+	border-radius: 5px; /* rounds out the corners of the border */
+	text-align: center;
+	font-size: 40px; /* how big the arrow is */
+	color: white;
+	cursor: pointer; /* so you know you can click on it */
+	transition: opacity 0.3s ease-out; /* takes 0.4 seconds to change opacity */
+	opacity: 0;
+}
+
+
+#back-to-top:hover /* when you hover, the background becomes this color */
+{
+    background: rgba(128, 128, 128, 0.4);
+}
+
+#back-to-top.show /* for when you want to see it */
+{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+

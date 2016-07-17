@@ -4,7 +4,7 @@
 
 <head>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
+	<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
 	<script type = "text/javascript" src = "index.js"> </script>
 	<link rel="stylesheet" href="index.css">
 
@@ -20,7 +20,7 @@
 		</div>
 
 		<div id = click>
-		Click below!
+		Click the magnified text!
 		</div>
 
 		<div id = fact_1 class = fact>
@@ -37,7 +37,7 @@
 		</div>
 
 		<div id = fact_2 class = fact>
-		All stars are almost entirely made up of Hydrogen and Helium.
+		All stars are mostly identical compositions of two elements.
 		</div>
 
 	</div>
@@ -50,7 +50,7 @@
 		</div>
 
 		<div id = fact_3 class = fact>
-		The nearest star to the sun is Proxima Centauri. <br> It is 4.24 light years away.
+		The nearest star to our solar system is 4.34 light years away.
 		</div>
 	</div>	
 </div>
@@ -63,7 +63,7 @@
 		</div>
 
 		<div id = fact_4 class = fact>
-		Stars don't twinkle; the flickering effect is due to light <br> bending when passing through Earth's atmosphere.
+		Stars "twinkle" because of heat and radiation <br> irregularities similar to sunspots. 
 		</div>
 	</div>
 </div>
@@ -80,29 +80,27 @@
 	How I wonder what you are
 	</div>
 
-	<div id = "form">
-	<form id = "my-form">
-		<fieldset class = "line">
-			<label id = "question">
+	
+	<form id = form>
+		<fieldset class = line>
+			<label id = question>
 				Which fact is false? 
 			</label>
-			<select id = "guess">
-				<option value = "identical"> All stars have almost identical compositions. </option>
-				<option value = "proxima"> The nearest star to the sun is Proxima Centauri. </option>
-				<option value = "flicker"> Stars don't actually twinkle. </option>
+
+			<select id = guess>
+				<option value = identical> All stars are mostly identical compositions of two elements. </option>
+				<option value = proxima> The nearest star to our solar system is 4.34 light years away. </option>
+				<option value = flicker> Stars twinkle due to heat and radiation irregularities. </option>
 			</select>
 		</fieldset>
 
-		<fieldset class = "line">
-			<button id = "form-submit"> Check your answer </button>
+		<fieldset class = line>
+			<button id = submit> Check your answer </button>
 		</fieldset>
-
 	</form>
-	</div>
-
-	<div id = "answer">
-		Trick question! All the facts are true!
-		<!-- <span id = "selected"></span> ->
+	
+	<div id = answer>
+	<!-- Whatever goes in here is determined by the form function in the javascript -->
 	</div>
 
 </div>

@@ -1,7 +1,5 @@
 body
-{
-margin: 0px;
-}
+{ margin: 0px; }
 
 .text
 {
@@ -11,6 +9,7 @@ font-family: Baskerville, sans-serif;
 text-shadow: 0px 0px 20px white;
 text-align: center;
 cursor: pointer; /* turns the cursor into a pointer so you know you can click */
+position: absolute;
 }
 
 .fact
@@ -20,6 +19,7 @@ font-size: 20px;
 font-family: Baskerville, sans-serif;
 text-shadow: 0px 0px 10px;
 text-align: center;
+position: absolute;
 }
 
 #container_1
@@ -41,7 +41,7 @@ text-align: center;
 	text-shadow: 0px 0px 10px;
 	text-align: center;
 	padding: 2px;
-	margin: 410px 0px 0px 755px;
+	margin: 405px 0px 0px 752px;
 	position: absolute;
 	}
 
@@ -49,14 +49,10 @@ text-align: center;
 	{
 	padding: 2px;
 	margin: 450px 0px 0px 685px;
-	position: absolute;
 	}
 
 	#fact_1 
-	{
-	margin: 500px 0px 0px 637px;
-	position: absolute;
-	}
+	{ margin: 500px 0px 0px 637px; }
 
 #container_2
 {  }
@@ -73,14 +69,10 @@ text-align: center;
 	{
 	padding: 2px;
 	margin: 385px 0px 0px 200px;
-	position: absolute;
 	}
 
 	#fact_2
-	{
-	margin: 433px 0px 0px 135px;
-	position: absolute;
-	}
+	{ margin: 433px 0px 0px 135px; }
 
 #container_3
 {  }
@@ -97,15 +89,10 @@ text-align: center;
 	{
 	padding: 2px;
 	margin: 260px 0px 0px 750px;
-	position: absolute;
 	}
 
 	#fact_3
-	{
-	margin: 305px 0px 0px 680px;
-	position: absolute;
-	text-align: center;
-	}
+	{ margin: 305px 0px 0px 680px; }
 
 #container_4
 {  }
@@ -122,15 +109,10 @@ text-align: center;
 	{
 	padding: 2px;
 	margin: 187px 0px 0px 595px;
-	position: absolute;
 	}
 
 	#fact_4
-	{
-	margin: 235px 0px 0px 573px;
-	position: absolute;
-	text-align: center;
-	}
+	{ margin: 235px 0px 0px 573px; }
 
 #container_5
 {  }
@@ -148,20 +130,18 @@ text-align: center;
 	{
 	padding: 2px;
 	margin: 565px 0px 0px 85px;
-	position: absolute;
 	}
 
 	#how_B
 	{
 	padding: 2px;
 	margin: 605px 0px 0px 85px;
-	position: absolute;
 	}
 
 	#form /* this is the whole form */
 	{
 	position: absolute;
-	margin: 660px 0px 0px 105px;
+	margin: 660px 0px 0px 95px;
 	}
 
 	.line
@@ -210,45 +190,49 @@ text-align: center;
 	font-family: Baskerville, sans-serif;
 	text-shadow: 0px 0px 10px;
 	position: absolute;
-	margin: 750px 0px 0px 110px;
+	margin: 750px 0px 0px 100px;
 	}
 
 
-/* This stuff is for the scroll to top arrow */
 
-#back-to-top 
+
+
+/* THIS STUFF IS FOR THE FIVE DOTS */
+
+.returns
 {
-	position: fixed;
-	z-index: 100; /* it's #100 in stacking, basically on top of everything else */
-	bottom: 20px; /* distance from the bottom */
-	right: 100px; /* distance from the right */
-	padding: 15px;
-	border: none;
-	border-radius: 5px; /* rounds out the corners of the border */
-	text-align: center;
-	font-size: 40px; /* how big the arrow is */
-	color: white;
-	cursor: pointer; /* so you know you can click on it */
-	transition: opacity 0.3s ease-out; /* takes 0.4 seconds to change opacity */
-	opacity: 0; /* because typicaly initially, you can't see it bc you're at the top */
-	text-decoration: none; /* gets rid of that weird underline */
+position: fixed;
+right: 30px; /* distance from the right */
+z-index: 100; /* it's #100 in stacking, basically on top of everything else */
+padding: 2px;
+border: none;
+text-align: center;
+font-size: 30px; /* how big the arrow is */
+color: white;
+cursor: pointer; /* so you know you can click on it */
+text-decoration: none; /* gets rid of that weird underline */
+opacity: 0.8; /* when there's no hovering, it's kind of translucent */
+}
+
+.returns:hover /* when you hover over the dot, the dot does this */
+{
+opacity: 1; /* becomes opaque */
+text-shadow: 0px 0px 7px; /* glows */
 }
 
 
-#back-to-top:hover /* when you hover, the div does this */
-{
-    text-shadow: 0px 0px 15px;
-}
+#back_to_one
+{ bottom: 140px; } /* distance from the bottom */
 
-#back-to-top.show /* for when you want to see it, after the appropriate scrolling */
-{
-    opacity: 1;
-}
+#back_to_two
+{ bottom: 110px; }
 
+#back_to_three
+{ bottom: 80px; }
 
+#back_to_four
+{ bottom: 50px; }
 
-
-
-
-
+#back_to_five
+{ bottom: 20px; }
 

@@ -17,14 +17,11 @@ $(document).ready(function()
 				{fontSize: '30px'}, 300);
 		});
 
-	// click sign expands then goes normal
+	// click sign pulses twice
 	$("#container_1").mouseenter(function()
 		{
 			$("#click").
-				animate({fontSize: "20px"}, 400).
-				animate({fontSize: "18px"}, 400).
-				animate({fontSize: "20px"}, 400).
-				animate({fontSize: "18px"}, 400);
+				animate({fontSize: "20px"}, 400).animate({fontSize: "18px"}, 400).animate({fontSize: "20px"}, 400).animate({fontSize: "18px"}, 400);
 		});
 
 	// click text to cause it to blink
@@ -33,11 +30,11 @@ $(document).ready(function()
 			$(this).fadeTo(200, 0.3).fadeTo(200, 1.0);
 		});
 
-	// click twinkle_A to fade in fact_1 and get rid of click sign
+	// click twinkle_A to get rid of click sign and fade in fact_1
 	$("#twinkle_A").click(function()
 	{
-		$("#fact_1").fadeIn(400)
 		$("#click").fadeOut(200)
+		$("#fact_1").fadeIn(400)
 	});
 
 	// click how_A to fade in fact_2
@@ -70,9 +67,8 @@ $(document).ready(function()
 		$("#form").fadeIn(400)
 	});
 	
-
-	// Different answers for the form
-	// Shoutout to Charlie for teaching me how to do this I love you dad
+	// Possible answers for the form
+	// Shoutout to Charlie Liu for showing me what I was getting wrong with this I love you dad
 
 	$("#submit").click(function(e) {
 		e.preventDefault(); // prevents page from refreshing, which is what usually happens with a button
@@ -95,54 +91,98 @@ $(document).ready(function()
 		$("#answer").text(answerAppear).fadeIn(50).animate({fontSize: "60px"}, 200).animate({fontSize: "37px"}, 400); // this is the function, put it after the if/else because there has to be in input for answerAppear before the animations happen	
 	});
 
+// 	ALL THIS STUFF IS FOR THE SCROLL TO TOP BUTTON
+
+	if ($(".returns").length)
+	{
+		// This stuff concerns how the arrow functions upon clicking -- this is the real deal
+
+		
+		$("#back_to_one").click(function (e){
+			e.preventDefault(); // prevents refreshing, as you will. literally who ever wants it to refresh??
+
+			$("html,body").animate(  // the body of the document animates
+				{
+				scrollTop: 0 // takes you to 0px on the document, aka the top of the first picture
+				}, 600); // takes 600 milliseconds to do this
+		});
 
 
+		$("#back_to_two").click(function (e){
+			e.preventDefault(); // prevents refreshing, as you will. literally who ever wants it to refresh??
 
+			$("html,body").animate(  // the body of the document animates
+				{
+				scrollTop: 860 // takes you to 860px on the document, aka the top of second picture
+				}, 600); // takes 600 milliseconds to do this
+		});
+
+
+		$("#back_to_three").click(function (e){
+			e.preventDefault(); // prevents refreshing, as you will. literally who ever wants it to refresh??
+
+			$("html,body").animate(  // the body of the document animates
+				{
+				scrollTop: 1880 // takes you to 1880px on the document, aka top of third picture
+				}, 600); // takes 600 milliseconds to do this
+		});
+
+
+		$("#back_to_four").click(function (e){
+			e.preventDefault(); // prevents refreshing, as you will. literally who ever wants it to refresh??
+
+			$("html,body").animate(  // the body of the document animates
+				{
+				scrollTop: 2760 // takes you to 2760px on the document, aka top of fourth picture
+				}, 600); // takes 600 milliseconds to do this
+		});
+
+
+		$("#back_to_five").click(function (e){
+			e.preventDefault(); // prevents refreshing, as you will. literally who ever wants it to refresh??
+
+			$("html,body").animate(  // the body of the document animates
+				{
+				scrollTop: 3800 // takes you to 3835px on the document, aka almost bottom
+				}, 600); // takes 600 milliseconds to do this
+		});
+	}
+
+
+/*
 
 	// 	ALL THIS STUFF IS FOR THE SCROLL TO TOP BUTTON
 
-	if ($("#back-to-top").length)
+	if ($(".returns").length)
 	{
-
-		// This stuff concerns whether we see the arrow or not
-
-	    	var scrollTrigger = 700, // trigger is at 700 pixels aka almost the first picture size
-	        backToTop = function() // this is us defining the backToTop function
-	        {
-				var scrollTop = $(window).scrollTop();
-				if (scrollTop > scrollTrigger) // if the distance from the top is greater than the trigger distance
-				{
-				    $("#back-to-top").addClass('show'); // show the arrow
-				}else{
-				    $("#back-to-top").removeClass('show'); // if we're within 800 px of the top, don't show the arrow
-				}
-	        };
-
-			backToTop(); // this is that function we just defined above
-			// basically saying HEY! DO THIS FUNCTION! if you just refreshed, there should be no arrow
-
-			$(window).scroll(function() // when we scroll on the window, that function above will happen
-				{
-					backToTop();
-				});
-			// SCROLLING TRIGGERS THIS FUNCTION! after scrolling, arrow should show up
-
 		// This stuff concerns how the arrow functions upon clicking -- this is the real deal
-			$("#back-to-top").click(function (e){
-				e.preventDefault(); // prevents refreshing, as you will. literally who ever wants it to refresh??
+		$(".returns").click(function (e){
+			e.preventDefault(); // prevents refreshing, as you will. literally who ever wants it to refresh??
 
-				$("html,body").animate(  // the body of the document animates
-					{
-					scrollTop: 0 // takes you to 0px on the document, aka the top
-					}, 600); // takes 600 milliseconds to do this
-			});
+			var triangle = $(".returns").val(); // THIS SI THE PROBLEM CHILD
+			var amountScroll = "";
+
+		
+			if triangle == "back_to_one"
+			{
+				amountScroll = 0;
+			}
+
+		});
+		
+		$("#body").scrollTop(amountScroll, 600); // scrolls to certain point on doc
+
 	}
-});
+*/
+
+
+}); // this ends the document ready stuff -- DO NOT DELETE!!!
 
 // la di da javascript is mean it never tells you exactly what's wrong
 // if you're going to have monospaced font you might as well have columns
-// help to identify which "unexpected identifier" or "token (" you're talking about
-// but it does cool shit and looks really pretty
+// helps to identify which "unexpected identifier" or "token )" you're talking about
+// but it does cool shit and the colors are beautiful
+// hi gabi and zach if you're reading this congrats you found my surprise #2
 
 
 

@@ -203,7 +203,7 @@ position: absolute;
 {
 position: fixed;
 right: 30px; /* distance from the right */
-z-index: 100; /* it's #100 in stacking, basically on top of everything else */
+z-index: 100; /* it's #100 in stacking, basically on top of everything else -- it's called z-index because it's the distance forward/out */
 padding: 2px;
 border: none;
 text-align: center;
@@ -222,7 +222,9 @@ text-shadow: 0px 0px 7px; /* glows */
 
 
 #back_to_one
-{ bottom: 140px; } /* distance from the bottom */
+{ 
+bottom: 140px;
+}
 
 #back_to_two
 { bottom: 110px; }

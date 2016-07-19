@@ -96,7 +96,66 @@ $(document).ready(function()
 	// 	ALL THIS STUFF IS FOR THE SCROLLING BUTTONS
 
 	if ($(".returns").length)
-	{
+	{ /*
+		var scrollTrigger = "", // px
+        backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+                $('#back-to-top').addClass('show');
+            } else {
+                $('#back-to-top').removeClass('show');
+            }
+        };
+    backToTop();
+    $(window).on('scroll', function () {
+        backToTop();
+    });
+    */
+
+
+
+	//----------------------- Lol what is any of this below here ------------------------//
+
+	// Hey the stuff under here is an attempt at making the single glows
+        backToTop = function ()
+        {
+            var scrollTop = $(window).scrollTop(); // scrollTop is a shorthand way to write "distance from the top"
+
+            if (scrollTop >= 0 && scrollTop < 880){ // so basically 0 <= scrollTop < 880 it's a range
+            	$("#back_to_one").css("text-shadow: 0px 0px 7px", "opacity: 1");
+                $("#back_to_two").css("text-shadow: none");
+                $("#back_to_three").css("text-shadow: none");
+                $("#back_to_four").css("text-shadow: none");
+                $("#back_to_five").css("text-shadow: none");
+            } else if (scrollTop >= 880 && scrollTop < 1880){
+                $("#back_to_one").css("text-shadow: none");
+                $("#back_to_two").css("text-shadow: 0px 0px 7px");
+                $("#back_to_three").css("text-shadow: none");
+                $("#back_to_four").css("text-shadow: none");
+                $("#back_to_five").css("text-shadow: none");
+            } else if (scrollTop >= 1880 && scrollTop < 2760) {
+            	$("#back_to_one").css("text-shadow: none");
+                $("#back_to_two").css("text-shadow: none");
+                $("#back_to_three").css("text-shadow: 0px 0px 7px");
+                $("#back_to_four").css("text-shadow: none");
+                $("#back_to_five").css("text-shadow: none");
+            } else if (scrollTop >= 2760 && scrollTop < 3640) {
+            	$("#back_to_one").css("text-shadow: none");
+                $("#back_to_two").css("text-shadow: none");
+                $("#back_to_three").css("text-shadow: none");
+                $("#back_to_four").css("text-shadow: 0px 0px 7px");
+                $("#back_to_five").css("text-shadow: none");
+            } else { // don't need conditions because it's literally the only option left --> only so much left in the document
+            	$("#back_to_one").css("text-shadow: none");
+                $("#back_to_two").css("text-shadow: none");
+                $("#back_to_three").css("text-shadow: none");
+                $("#back_to_four").css("text-shadow: none");
+                $("#back_to_five").css("text-shadow: 0px 0px 7px");
+            }
+        };
+        
+
+
 		$("#back_to_one").click(function (e){
 			e.preventDefault(); // prevents refreshing, as you will. literally who ever wants it to refresh??
 			$("html,body").animate(  // the body of the document animates
@@ -110,27 +169,21 @@ $(document).ready(function()
 			$("html,body").animate({scrollTop: 860}, 600);
 		});
 
-
 		$("#back_to_three").click(function (e){
 			e.preventDefault();
 			$("html,body").animate({scrollTop: 1880}, 600);
 		});
-
 
 		$("#back_to_four").click(function (e){
 			e.preventDefault();
 			$("html,body").animate({scrollTop: 2760}, 600);
 		});
 
-
 		$("#back_to_five").click(function (e){
 			e.preventDefault();
 			$("html,body").animate({scrollTop: 3800}, 600);
 		});
 	}
-
-
-
 }); // this ends the document ready stuff -- DO NOT DELETE!!!
 
 // la di da javascript is mean it never tells you exactly what's wrong

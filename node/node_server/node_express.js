@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+app.get('/goodbye', function (req, res) {
+  res.send('Goodbye World!');
+});
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+=======
 var express = require("express");
 var app = express();
 
@@ -26,4 +41,5 @@ app.get("/monica", function (req, res) { // this is localhost:3000/monica
 
 app.listen(3000, function () {
   console.log("Example app listening on port 3000!"); // console log to the terminal
+>>>>>>> 5c971d9c10381ba82022510e83c59437c43d89cf
 });

@@ -18,7 +18,6 @@ app.get("/", function (req, res) {
 });
 
 
-
 app.get("/set_car", function(req, res){
     console.log(req.query.price); // puts it in the terminal upon submitting
     console.log(req.query.color);
@@ -27,16 +26,11 @@ app.get("/set_car", function(req, res){
     carColor = req.query.color;
 });
 
-
-
 app.get("/retrieve_car", function(req, res){
 
 	res.send("The car costs $" +carPrice+ " and the color is " +carColor);
 	console.log("the description has been sent!")
 });
-
-
-
 
 app.listen(3000, function () {
   console.log("Example app listening on port 3000!"); // upon refresh, lets you know things are working in the terminal

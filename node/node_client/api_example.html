@@ -1,32 +1,108 @@
 <html>
 <head>
-	<title>API Example</title>
+	<title> API Example </title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script>
 
-		$(document).ready(function(){
-			$.ajax({
-				url: "https://api.spotify.com/v1/search?q=prince&type=album",
-				success: ajaxHandler
-			});
-		});
+		$(document).ready(function(){ // when the doc is loaded
 
-		function ajaxHandler(data)
-		{
-			console.log(data);
+			var userType;
+			var returnType;
+			// these variables should be outside of click because you need them for ajaxHandler too
 
-			var results = data.albums.items;
-			for(var i = 0; i < results.length; i++)
+
+			$("#submit").click(function(e)
 			{
-				$("#api_result").append(results[i].name + "\n");
+				e.preventDefault();
+				$("#api_result").text(""); // when clicking, the previous text goes away
+
+				userKeyword = $("#userKeyword").val(); // the word
+				userProperty = $("#userProperty").val(); // the property the keyword should be in
+				userType = $("#userType").val(); // the kind of results you want
+				returnType = userType + "s"; // need to add s because that's what need to be in data[returnedType] in ajaxHandler -- albums, artists, tracks, playlists. the type is album, but the list we're looking through is called albums
+				userNumber = $("#userNumber").val(); // number of results
+
+				$.ajax({ // calling out an ajax request to do the below stuff
+
+					url: "https://api.spotify.com/v1/search",
+					data: {
+						q: userProperty + userKeyword, // changes what's searched by the user --> the literal word has to be in it
+						type: userType, // changes what's returned to the user --> i only want this type of result
+						limit: userNumber // limits number of results
+					},
+					success: ajaxHandler // success handler is a function that takes the data and does SOMETHING with it
+				});	
+			});	
+		
+
+			function ajaxHandler(data) // this is the SOMETHING it does with it
+			{
+				console.log(userType);
+				console.log(data); // logs all the data to the console
+
+				var results = data[returnType].items; // the array
+				for(var i = 0; i < results.length; i++) // going through all the names in the array, by 1
+				{
+					$("#api_result").append(results[i].name + "\n"); // print these names -- if i were to write id instead, it would show me their numbers
+				}
 			}
-		}
+
+		});
 
 	</script>
 
 </head>
 <body>
-	<textarea id="api_result" cols=60 rows=20></textarea>
+
+	<fieldset>
+		<label id = "searchKeyword">
+			Keyword:
+		</label>
+		<input type = "text" id = "userKeyword">
+	</fieldset>
+
+	<fieldset>
+		<label id = "searchProperty">
+			Keyword type: 
+		</label>
+
+		<select id = "userProperty">
+			<option value = ""> Any </option>
+			<option value = "album:"> Albums </option>
+			<option value = "artist:"> Artists </option>
+			<option value = "track:"> Songs </option>
+			<option value = "playlist:"> Playlists </option>
+		</select>
+	</fieldset>
+
+	<fieldset>
+		<label id = "searchType">
+			Show:
+		</label>
+
+		<select id = "userType">
+			<option value = "album"> Albums </option>
+			<option value = "artist"> Artists </option>
+			<option value = "track"> Songs </option>
+			<option value = "playlist"> Playlists </option>
+		</select>
+	</fieldset>
+
+	<fieldset>
+		<label id = "searchNumber">
+			Number of results:
+		</label>
+		<input type = "text" id = "userNumber">
+	</fieldset>
+
+	<fieldset>
+		<button id = "submit">
+		Search
+		</button>
+	</fieldset>
+
+	<textarea id = "api_result" cols=40 rows=20></textarea>
+
 </body>
 </html>

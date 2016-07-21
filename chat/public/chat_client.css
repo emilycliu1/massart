@@ -1,7 +1,7 @@
 body
 {
 	background-color: #957085;
-	font: 18px;
+	font: 20px;
 	font-family: Baskerville, sans-serif;
 }
 
@@ -17,6 +17,8 @@ body
 	height: 18px;
 	width: 200px;
 	margin-right: 10px;
+	font-family: Baskerville, sans-serif;	
+	font-size: 16px;
 }
 
 #chat_start
@@ -36,7 +38,7 @@ body
 	margin: 0px;
 	position: fixed;
 	top: 60px;
-	bottom: 65px;
+	bottom: 100px;
 	right: 20px;
 	left: 20px;
 	overflow-y: scroll;
@@ -63,8 +65,8 @@ form
 {
 	background: none;
 	position: fixed;
-	bottom: 10px;
-	right: 20px;
+	bottom: 0px;
+	right: 11px;
 	left: 5px;
 	padding: 0px;
 }
@@ -77,11 +79,13 @@ fieldset
 #chat_input
 {
 	height: 18px;
-	width: 90%;
+	width: 100%;
 	top: 0px;
 	left: 0px;
-	right: 0px;
-	margin-right: 20px;
+	right: 5px;
+	margin-right: 10px;
+	font-family: Baskerville, sans-serif;	
+	font-size: 16px;
 }
 
 #send
@@ -89,10 +93,22 @@ fieldset
 	background-color: rgba(255, 255, 255, 0.5);
 	font-size: 14px;
 	font-family: Baskerville, sans-serif;
-	position: fixed;
-	right: 20px;
 	text-align: center;
 	border-radius: 50%;
 	padding: 5px;
-	width: 55px;
+	width: 60px;
 }
+
+#quote
+{
+	background-color: rgba(255, 255, 255, 0.5);
+	font-size: 14px;
+	font-family: Baskerville, sans-serif;
+	text-align: center;
+	border-radius: 50%;
+	padding: 5px;
+	width: 85px;
+}
+
+
+

@@ -28,6 +28,11 @@ app.get("/get_archive", function(req, res){
 	res.send(chatArchive);
 });
 
+app.use(express.static('public')); // this public folder is a static folder
+app.get('/chat', function(req,res){ // instead of sending text, we're sending a file
+  res.sendFile(__dirname + '/chat_client.html');
+});
+
 http.listen(3000, function () {
 	console.log("Example app listening on port 3000!"); // console log to the terminal
 });

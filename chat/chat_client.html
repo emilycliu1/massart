@@ -3,16 +3,18 @@
 <head>
 	<title> Chat Client </title>
 
-	<link rel = "stylesheet" type = "text/css" href = "chat_client.css"> <!-- reference chat_client.css -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> <!-- reference jquery library -->
-	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script> <!-- reference socket.io -->
-	<script type = "text/javascript" src = "chat_client.js"> </script> <!-- reference chat_client.js -->
+	<link rel = "stylesheet" type = "text/css" href = "chat_client.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	<script type = "text/javascript" src = "chat_client.js"> </script>
+
 </head>
 <body>
 
 	<div id = "chat_meta">
-		<input type = "text" id = "chat_name">
-		<button id = "chat_start"> Start chatting! </button>
+		<input type = "text" id = "chat_name" placeholder = "Enter name">
+		<button id = "chat_start"> Load history </button>
+
 	</div>
 
 	<div id = "chat_log">
@@ -22,8 +24,12 @@
 
 	<form id = "chat_form">
 		<fieldset> 
-			<input type = "text" id = "chat_input">
-			<button id = "send"> Send </button>
+			<input type = "text" id = "chat_input" placeholder = "Enter message">
+		</fieldset>
+
+		<fieldset>
+			<button id = "send"> Enter </button>
+			<button id = "quote"> Find quote </button>
 		</fieldset>
 	</form>
 

@@ -1,29 +1,4 @@
-$(document).ready(function()
-{	
-	var socket = io();
-
-	$("#chat_start").click(function(e){
-		e.preventDefault();
-		$.ajax({
-			url: "get_archive",
-			success: function(data)
-			{
-				for(var i = 0; i < data.length; i++)
-				{
-					var msg = data[i];
-					if(msg.username == $("#chat_name").val())
-					{
-						$("#chat_log ul").append("<li class = 'me_line'><b>" +msg.username+ "</b>: " +msg.text+ "</li>"); // li means list item, so append that message into the <ul>
-					} else {
-						$("#chat_log ul").append("<li class = 'them_line'><b>" +msg.username+ "</b>: " +msg.text+ "</li>");	
-					}
-				}
-			}
-		});
-	});
-
-
-	$("#send").click(function(e){ // when we click the button or hit enter, run these functions
+$("#send").click(function(e){ // when we click the button or hit enter, run these functions
 		e.preventDefault();
 
 		var messageObject = {};
@@ -85,7 +60,7 @@ $(document).ready(function()
 			var newWord = synonymArray[Math.floor(Math.random() * synonymArray.length)];
 			console.log(newWord); // this is the selected word
 
-			messageObject.text = originalMessage.split(" " +originalWord).join(' "'+newWord+'"'); // get rid of old words and replace with new words and quotations
+			messageObject.text = originalMessage.split(originalWord).join('"'+newWord+'"'); // get rid of old words and replace with new words and quotations
 			// console.log(messageObject.text);
 			sendItIn();
 		}	
@@ -98,8 +73,6 @@ $(document).ready(function()
 		}
 	});
 
-
-	// get the time of day
 
 	x = 1;  // going up by ones in seconds
 	 	var date = new Date(); // time value from milliseconds since midnight January 1, 1970
@@ -116,24 +89,3 @@ $(document).ready(function()
 			$("#chat_log ul").append("<li class = 'them_line'>" +timeStamp+ " -- <b>" +msg.username+ "</b>: " +msg.text+ "</li>");	
 		}
 	});
-
-	// from https://github.com/jacopocolo/Hex-clock/blob/master/Hex%20clock.html for the aesthetic
-	// if you don't already know what it is check out http://www.jacopocolo.com/hexclock/ i love it
-	function findColor()
-	{
-	 	
-	 	if (hrs <= 9) { hrs = "0" +hrs }; // so there are always 6 digits
-	 	if (min <= 9) { min = "0" +min };
-		if (sec <= 9) { sec = "0" +sec };
-		
-	 	var	color = "#" +hrs +min +sec ; // puts the numbers into hexadecimal form
-
-	 	$("body").css("background-color", color ); // background changes with time
-	 	$("button").css("color", color);
-	 	$("#chat_log").css("color", color ); // text color changes with time
-
-	    setTimeout(findColor, x*1000); // so it is every second, not every millisecond
-	}
-
-	findColor(); // do this thing
-});

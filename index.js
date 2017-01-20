@@ -186,10 +186,10 @@ $(document).ready(function()
 	}
 }); // this ends the document ready stuff -- DO NOT DELETE!!!
 
-// la di da javascript is mean it never tells you exactly what's wrong
+// la di da sublime text is mean you can never find exactly where it's wrong
 // if you're going to have monospaced font you might as well have columns
 // helps to identify which "unexpected identifier" or "token )" you're talking about
-// but it does cool shit and the colors are beautiful
+// but it does cool stuff and the ~aesthetic~ is beautiful
 // hi gabi and zach if you're reading this congrats you found my surprise #2
 
 

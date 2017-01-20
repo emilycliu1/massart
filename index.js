@@ -91,9 +91,32 @@ $(document).ready(function()
 		$("#answer").text(answerAppear).fadeIn(50).animate({fontSize: "60px"}, 200).animate({fontSize: "37px"}, 400); // this is the function, put it after the if/else because there has to be in input for answerAppear before the animations happen	
 	});
 
-	//----------------------- Lol what is any of the below ------------------------//
 
-	// Hey the stuff under here is an attempt at making the triangles glow depending on what page you're on
+
+	// 	ALL THIS STUFF IS FOR THE SCROLLING BUTTONS
+
+	if ($(".returns").length)
+	{ /*
+		var scrollTrigger = "", // px
+        backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+                $('#back-to-top').addClass('show');
+            } else {
+                $('#back-to-top').removeClass('show');
+            }
+        };
+    backToTop();
+    $(window).on('scroll', function () {
+        backToTop();
+    });
+    */
+
+
+
+	//----------------------- Lol what is any of this below here ------------------------//
+
+	// Hey the stuff under here is an attempt at making the single glows
         backToTop = function ()
         {
             var scrollTop = $(window).scrollTop(); // scrollTop is a shorthand way to write "distance from the top"
@@ -161,7 +184,7 @@ $(document).ready(function()
 			$("html,body").animate({scrollTop: 3800}, 600);
 		});
 	}
-}); // this ends the document ready call -- DO NOT DELETE!!!
+}); // this ends the document ready stuff -- DO NOT DELETE!!!
 
 // la di da sublime text is mean you can never find exactly where it's wrong
 // if you're going to have monospaced font you might as well have columns

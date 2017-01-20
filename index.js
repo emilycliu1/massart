@@ -79,13 +79,13 @@ $(document).ready(function()
 
 		if (guessVal == "identical") // if the option value is "identical"
 		{
-			answerAppear = "Incorrect! The two elements are Hydrogen and Helium."; // then the text in the answer div will be ""
+			answerAppear = "This is true! The two elements are Hydrogen and Helium."; // then the text in the answer div will be ""
 		} else if (guessVal == "proxima") // if it's not identical but is proxima...
 		{
-			answerAppear = "Incorrect! The star is Proxima Centauri.";
+			answerAppear = "This is true! The star is Proxima Centauri.";
 		} else // no need to write "if (guessVal) == "flicker" because it's the only option left anyways
 		{
-			answerAppear = 'Correct! "Twinkling" is actually caused by light bending in the atmosphere.'; // diff quotes bc of the quotes in the text
+			answerAppear = 'This is false! "Twinkling" is actually caused by light bending in the atmosphere.'; // diff quotes bc of the quotes in the text
 		}
 
 		$("#answer").text(answerAppear).fadeIn(50).animate({fontSize: "60px"}, 200).animate({fontSize: "37px"}, 400); // this is the function, put it after the if/else because there has to be in input for answerAppear before the animations happen	

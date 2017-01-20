@@ -197,7 +197,7 @@ position: absolute;
 
 
 
-/* THIS STUFF IS FOR THE FIVE DOTS */
+/* THIS STUFF IS FOR THE FIVE TRIANGLES */
 
 .returns
 {
@@ -207,14 +207,14 @@ z-index: 100; /* it's #100 in stacking, basically on top of everything else -- i
 padding: 2px;
 border: none;
 text-align: center;
-font-size: 30px; /* how big the arrow is */
+font-size: 30px; /* how big the triangle is */
 color: white;
 cursor: pointer; /* so you know you can click on it */
 text-decoration: none; /* gets rid of that weird underline */
 opacity: 0.8; /* when there's no hovering, it's kind of translucent */
 }
 
-.returns:hover /* when you hover over the dot, the dot does this */
+.returns:hover /* when you hover over the triange, the triange does this */
 {
 opacity: 1; /* becomes opaque */
 text-shadow: 0px 0px 7px; /* glows */

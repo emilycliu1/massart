@@ -197,7 +197,7 @@ position: absolute;
 
 
 
-/* THIS STUFF IS FOR THE FIVE TRIANGLES */
+/* THIS STUFF IS FOR THE FIVE TRIANGLES AT THE BOTTOM RIGHT */
 
 .returns
 {
@@ -207,7 +207,7 @@ z-index: 100; /* it's #100 in stacking, basically on top of everything else -- i
 padding: 2px;
 border: none;
 text-align: center;
-font-size: 30px; /* how big the triangle is */
+font-size: 40px; /* how big the triangle is */
 color: white;
 cursor: pointer; /* so you know you can click on it */
 text-decoration: none; /* gets rid of that weird underline */
